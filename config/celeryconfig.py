@@ -1,0 +1,11 @@
+broker_url = 'pyamqp://test:test@45.56.109.199//'
+result_backend = 'redis://@45.56.109.199:6379/0'
+imports = ('app.tasks',)
+result_persistent = True
+task_ignore_result = False
+task_acks_late = True
+worker_concurrency = 3
+worker_prefetch_multiplier = 4
+enable_utc = True
+timezone = 'Europe/Moscow'
+broker_transport_options = {'visibility_timeout': 3600, 'confirm_publish': True, 'fanout_prefix': True, 'fanout_patterns': True}
